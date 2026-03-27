@@ -1,0 +1,47 @@
+[
+    {
+        "nome_paciente": "Maria Silva Oliveira",
+        "nome_medico": "Dr. Carlos Andrade",
+        "crm": "15482/SP",
+        "data_atendimento": "2023-11-20",
+        "dias_afastamento": 3,
+        "cid": "J03.9",
+        "arquivo_origem": "atestado_maria_2023.pdf"
+    },
+    {
+        "nome_paciente": "João Pedro Santos",
+        "nome_medico": "Dra. Ana Luiza Ferreira",
+        "crm": "98231/RJ",
+        "data_atendimento": "2024-01-15",
+        "dias_afastamento": 5,
+        "cid": "B34.2",
+        "arquivo_origem": "atestado_joao_pedro.png"
+    },
+    {
+        "nome_paciente": "Camila Costa",
+        "nome_medico": "Dr. Fernando Souza",
+        "crm": "44123/MG",
+        "data_atendimento": "2024-03-05",
+        "dias_afastamento": 1,
+        "cid": null,
+        "arquivo_origem": "foto_receita_camila.jpg"
+    },
+    {
+        "nome_paciente": "Pedro de Alcântara",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "55443/SP",
+        "data_atendimento": "2026-03-27",
+        "dias_afastamento": 4,
+        "cid": "A09",
+        "arquivo_origem": "atestado_pedro.png"
+    },
+    {
+        "nome_paciente": "Renata Vasconcelos",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "12399/RJ",
+        "data_atendimento": "2026-03-27",
+        "dias_afastamento": 2,
+        "cid": "J01",
+        "arquivo_origem": "atestado_renata.png"
+    }
+]
