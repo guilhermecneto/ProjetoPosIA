@@ -1,47 +1,46 @@
 [
     {
-        "nome_paciente": "Maria Silva Oliveira",
-        "nome_medico": "Dr. Carlos Andrade",
-        "crm": "15482/SP",
-        "data_atendimento": "2023-11-20",
-        "dias_afastamento": 3,
-        "cid": "J03.9",
-        "arquivo_origem": "atestado_maria_2023.pdf"
-    },
-    {
-        "nome_paciente": "João Pedro Santos",
-        "nome_medico": "Dra. Ana Luiza Ferreira",
-        "crm": "98231/RJ",
-        "data_atendimento": "2024-01-15",
-        "dias_afastamento": 5,
-        "cid": "B34.2",
-        "arquivo_origem": "atestado_joao_pedro.png"
-    },
-    {
-        "nome_paciente": "Camila Costa",
-        "nome_medico": "Dr. Fernando Souza",
-        "crm": "44123/MG",
-        "data_atendimento": "2024-03-05",
-        "dias_afastamento": 1,
-        "cid": null,
-        "arquivo_origem": "foto_receita_camila.jpg"
-    },
-    {
         "nome_paciente": "Pedro de Alcântara",
         "nome_medico": "Julio Cesar Batista",
         "crm": "55443/SP",
         "data_atendimento": "2026-03-27",
-        "dias_afastamento": 4,
         "cid": "A09",
-        "arquivo_origem": "atestado_pedro.png"
+        "dias_afastamento": 4,
+        "arquivo_origem": "atestado_pedro.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "O atestado apresenta total consistência técnica. O CID A09 (Diarreia e gastroenterite de origem infecciosa presumível) é compatível com o período de 4 dias de afastamento para recuperação e evitar contágio. O CRM segue o padrão regulamentar (Números/UF) e a cronologia está correta, com o atendimento ocorrendo em data anterior à atual."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_especialidade_cid": "Certa",
+            "alerta_rqe": "Nenhum. O CID A09 (Diarreia e gastroenterite de origem infecciosa presumível) é de manejo comum na clínica médica geral e urgência/emergência.",
+            "conclusao_tecnica": "O CRM apresenta formato válido seguindo as normas do Conselho Federal de Medicina. Como não foi detectada especialidade específica no registro fornecido, o médico é tratado como Generalista. O diagnóstico (CID A09) é perfeitamente compatível com a atuação de um médico generalista, não havendo necessidade de validação de RQE para este caso."
+        }
     },
     {
         "nome_paciente": "Renata Vasconcelos",
         "nome_medico": "Julio Cesar Batista",
         "crm": "12399/RJ",
         "data_atendimento": "2026-03-27",
-        "dias_afastamento": 2,
         "cid": "J01",
-        "arquivo_origem": "atestado_renata.png"
+        "dias_afastamento": 2,
+        "arquivo_origem": "atestado_renata.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "Os dados extraídos estão em plena conformidade. O CRM segue o padrão brasileiro (Número/UF), o CID J01 (Sinusite aguda) é compatível com o período de afastamento de 2 dias e a data do atendimento é anterior à data atual, respeitando a cronologia lógica."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_especialidade_cid": "Certa",
+            "alerta_rqe": "Sem alertas. O CID J01 (Sinusite aguda) é uma patologia de atenção primária, tratável por clínico geral.",
+            "conclusao_tecnica": "Validação concluída com sucesso. O CRM segue o padrão normativo (12399/RJ) e o CID informado (J01) é plenamente compatível com a atuação de um médico generalista, não apresentando indícios de exercício de especialidade restrita sem a devida qualificação."
+        }
     }
 ]

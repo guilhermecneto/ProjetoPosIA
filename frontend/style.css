@@ -233,6 +233,19 @@ tbody td {
     color: var(--text-strong);
 }
 
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.crm-valid, .crm-invalid {
+    font-size: 1.1rem;
+    cursor: default;
+}
+
 /* Badges */
 .badge {
     padding: 0.35rem 0.75rem;
@@ -251,6 +264,30 @@ tbody td {
 .badge-days {
     background-color: #EEF2FF;
     color: #4338CA;
+}
+
+.badge-status {
+    text-transform: capitalize;
+}
+
+.status-aprovado {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.status-atencao {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+.status-irregular {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.status-erro, .status-pendente {
+    background-color: #F1F5F9;
+    color: #475569;
 }
 
 .file-tag {

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     
     const totalCountEl = document.getElementById('total-count');
-    const totalDaysEl = document.getElementById('total-days');
+
 
     let certificatesData = [];
 
@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.innerHTML = '';
         
         totalCountEl.textContent = data.length;
-        const totalDays = data.reduce((acc, curr) => acc + (parseInt(curr.dias_afastamento) || 0), 0);
-        
-        animateValue(totalDaysEl, parseInt(totalDaysEl.textContent) || 0, totalDays, 500);
 
         if (data.length === 0) {
             emptyState.style.display = 'block';
@@ -44,9 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td class="patient-name">${item.nome_paciente || 'N/A'}</td>
                     <td>${item.nome_medico || 'N/A'}</td>
                     <td>${item.crm || 'N/A'}</td>
+                    <td class="text-center">${item.validacao_profissional?.crm_formato_valido ? '<span class="crm-valid" title="Formato OK">✅</span>' : '<span class="crm-invalid" title="' + (item.validacao_profissional?.conclusao_tecnica || 'Inválido') + '">❌</span>'}</td>
                     <td>${formatDate(item.data_atendimento)}</td>
-                    <td><span class="badge badge-days">${item.dias_afastamento || '0'} dias</span></td>
+
                     <td><span class="badge ${item.cid ? 'badge-cid' : ''}">${item.cid || 'N/A'}</span></td>
+                    <td class="text-center font-weight-bold">${item.dias_afastamento ? item.dias_afastamento + (typeof item.dias_afastamento === 'number' ? ' dias' : '') : 'N/A'}</td>
+                    <td><span class="badge badge-status status-${(item.auditoria?.status || 'pendente').toLowerCase()}" title="${(item.auditoria?.alertas || []).join(', ')}">${item.auditoria?.status || 'Pendente'}</span></td>
                     <td><span class="file-tag" title="${item.arquivo_origem}">${item.arquivo_origem || '-'}</span></td>
                 `;
                 
