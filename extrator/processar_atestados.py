@@ -97,6 +97,41 @@ def processar_atestado_completo(caminho_arquivo):
         print(f"Erro na validação profissional: {e}")
         dados['validacao_profissional'] = {"crm_formato_valido": False, "conclusao_tecnica": "Falha na validação"}
 
+    time.sleep(15) # Respeitar rate limit
+
+    # 4. FILTRO DE PRIVACIDADE E LGPD (ANONIMIZAÇÃO)
+    skill_privacidade = carregar_skill("FiltroPrivacidadeLGPD.md")
+    model_privacidade = genai.GenerativeModel("gemini-flash-latest", system_instruction=skill_privacidade)
+    print("[4/5] Aplicando filtro de sanitização LGPD e Sigilo Médico...")
+    try:
+        res_lgpd = model_privacidade.generate_content(f"Revise e anonimize este JSON removendo dados de diagnóstico: {json.dumps(dados)}")
+        lgpd_json = json.loads(res_lgpd.text.strip().replace("```json", "").replace("```", ""))
+        dados['privacidade_lgpd'] = lgpd_json
+    except Exception as e:
+        print(f"Erro na anonimização LGPD: {e}")
+        dados['privacidade_lgpd'] = {"sucesso_anonimizacao": False, "parecer_dpo": "Falha ao aplicar filtro de privacidade."}
+
+    time.sleep(15) # Respeitar rate limit
+
+    # 5. PLANEJADOR DE RETORNO AO TRABALHO (ONBOARDING & PRODUTIVIDADE)
+    skill_retorno = carregar_skill("PlanejadorRetornoTrabalho.md")
+    model_retorno = genai.GenerativeModel("gemini-flash-latest", system_instruction=skill_retorno)
+    print("[5/5] Gerando plano corporativo de readaptação (RH/Onboarding)...")
+    try:
+        # Pega a quantidade original de dias extraídas para basear a diretriz (tenta do LGPD primeiro, senão dados brutos)
+        qtd_dias = dados.get("privacidade_lgpd", {}).get("dados_seguros_para_rh", {}).get("dias_afastamento") 
+        if not qtd_dias:
+            qtd_dias = dados.get("dias", "Não especificado")
+        payload_retorno = {"dias_afastamento_estimados": qtd_dias}
+        
+        # Envia apenas {"dias"} para blindar e garantir que o modelo não acesse nem leia nomes de doenças ou CID
+        res_retorno = model_retorno.generate_content(f"Com base apenas neste tempo de afastamento, gere as diretrizes de RH: {json.dumps(payload_retorno)}")
+        retorno_json = json.loads(res_retorno.text.strip().replace("```json", "").replace("```", ""))
+        dados['plano_de_retorno_rh'] = retorno_json
+    except Exception as e:
+        print(f"Erro na geração de diretrizes de retorno: {e}")
+        dados['plano_de_retorno_rh'] = {"plano_retorno_gerado": False, "orientacao_ergonomica_padrao": "Bem-vindo de volta! Faça pausas e ajuste sua cadeira."}
+
     return dados
 
 def main():
@@ -123,6 +158,29 @@ def main():
         print(f"\nFinalizado! {len(novos_dados)} novos atestados processados.")
     else:
         print("\nNenhum novo atestado para processar.")
+
+    # 6. ANÁLISE MACRO: SAÚDE OCUPACIONAL E PREVENÇÃO DE RISCO NO AMBIENTE
+    if dados_atuais:
+        print("\n--- Analisando o Cenário Geral de Saúde Ocupacional (Macro) ---")
+        skill_macro = carregar_skill("AnalistaSaudeOcupacional.md")
+        if skill_macro:
+            model_macro = genai.GenerativeModel("gemini-flash-latest", system_instruction=skill_macro)
+            
+            # Extraímos do banco apenas o panorama da doença e dias associados (sem nomes, sem atestado bruto)
+            amostra_historico = [{"doenca_cid": d.get("cid", d.get("diagnostico", "Não identificado")), "dias": d.get("dias", 1)} for d in dados_atuais]
+                
+            try:
+                res_macro = model_macro.generate_content(f"Gere o relatório de Saúde Ocupacional baseado nesta amostragem corporativa (evite usar CIDs explicitamente na resposta, foque no motivo e solução): {json.dumps(amostra_historico)}")
+                relatorio_json = json.loads(res_macro.text.strip().replace("```json", "").replace("```", ""))
+                
+                # Salva o relatório num JSON separado para o painel de diretoria/RH
+                caminho_relatorio = "../frontend/public/relatorio_ocupacional.json"
+                os.makedirs(os.path.dirname(caminho_relatorio), exist_ok=True)
+                with open(caminho_relatorio, 'w', encoding='utf-8') as f:
+                    json.dump(relatorio_json, f, indent=4, ensure_ascii=False)
+                print("Relatório Corporativo de Risco Ocupacional gerado em: " + caminho_relatorio)
+            except Exception as e:
+                print(f"Erro na geração do relatório ocupacional macro: {e}")
 
 if __name__ == "__main__":
     main()

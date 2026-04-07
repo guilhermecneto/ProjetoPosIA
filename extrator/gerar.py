@@ -38,6 +38,30 @@ def criar_atestado(nome_paciente, crm, dias, cid, arquivo):
     d.text((50, 50), texto, fill=(0, 0, 0))
     img.save(f"../documentos_medicos/{arquivo}")
 
+import random
+
 criar_atestado("Pedro de Alcântara", "55443/SP", 4, "A09", "atestado_pedro.png")
 criar_atestado("Renata Vasconcelos", "12399/RJ", 2, "J01", "atestado_renata.png")
-print("Atestados gerados!")
+
+nomes = ["Guilherme", "Carlos Silva", "Mariana Souza", "Roberto Alves", "Ana Maria", "Joao Paulo", "Fernanda Costa", "Lucas Lima", "Paulo Mendes", "Rita Carvalho"]
+crms = ["11223/SP", "33445/RJ", "55667/MG", "77889/PR", "99001/SC"]
+# Adicionando alguns CIDs estratégicos para avaliarmos o Macro (Ergonomia, Psicológico e Comuns)
+casos = [
+    ("M54", 5), # Dorsalgia (Dores nas costas)
+    ("M65", 7), # Tenossinovite
+    ("M54", 4), # Dorsalgia
+    ("F41", 10), # Ansiedade
+    ("Z73", 15), # Esgotamento (Burnout)
+    ("J11", 3), # Influenza (Gripe)
+    ("A09", 2), # Gastroenterite
+    ("H10", 3), # Conjuntivite
+    ("U07.1", 5), # COVID
+    ("U07.1", 7)  # COVID
+]
+
+for i, nome in enumerate(nomes):
+    crm = random.choice(crms)
+    cid, dias = casos[i]
+    criar_atestado(nome, crm, dias, cid, f"atestado_{nome.split()[0].lower()}_{i}.png")
+
+print("Os 10 novos atestados aleatórios foram gerados com sucesso!")

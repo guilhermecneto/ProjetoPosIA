@@ -42,5 +42,216 @@
             "alerta_rqe": "Sem alertas. O CID J01 (Sinusite aguda) é uma patologia de atenção primária, tratável por clínico geral.",
             "conclusao_tecnica": "Validação concluída com sucesso. O CRM segue o padrão normativo (12399/RJ) e o CID informado (J01) é plenamente compatível com a atuação de um médico generalista, não apresentando indícios de exercício de especialidade restrita sem a devida qualificação."
         }
+    },
+    {
+        "nome_paciente": "Carlos Silva",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "77889/PR",
+        "data_atendimento": "2026-03-27",
+        "cid": "M65",
+        "dias_afastamento": 7,
+        "arquivo_origem": "atestado_carlos_1.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "O atestado apresenta plena conformidade técnica. O CRM segue o padrão 'Número/UF', a data de atendimento é anterior à data atual (2026-04-06) e o período de 7 dias de afastamento é clinicamente compatível com o diagnóstico de Sinovite e Tenossinovite (CID M65)."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_especialidade_cid": "Certa",
+            "alerta_rqe": "Nenhum. O CID M65 (Sinovite e tenossinovite) refere-se a inflamações comuns que podem ser tratadas por um clínico geral/generalista.",
+            "conclusao_tecnica": "O CRM 77889/PR está em formato válido. Como não foi informada uma especialidade específica, o médico é tratado como Generalista. O CID M65 é de complexidade básica/intermediária, compatível com a atuação de um médico generalista, não havendo necessidade imediata de validação de RQE para este diagnóstico."
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": true,
+            "campos_ocultados": [
+                "cid",
+                "parecer_tecnico",
+                "alerta_rqe",
+                "conclusao_tecnica"
+            ],
+            "dados_seguros_para_rh": {
+                "medico": "Julio Cesar Batista (CRM 77889/PR)",
+                "dias_afastamento": 7,
+                "cid_processado": "[DADO OCULTO - PROTEÇÃO LGPD]",
+                "observacao_privacidade": "Ativo"
+            },
+            "parecer_dpo": "Anonimização realizada com sucesso. Todos os identificadores de diagnóstico (CID M65) e descrições clínicas (Sinovite e Tenossinovite) foram removidos dos campos de auditoria e técnicos. Os dados remanescentes são estritamente administrativos e suficientes para o processamento da folha de pagamento e abono de faltas, garantindo a conformidade com a LGPD e o sigilo médico."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "7",
+            "diretrizes_gestor_rh": [
+                "Realizar uma breve reunião de boas-vindas (check-in) para acolher o colaborador e alinhar as expectativas para a primeira semana de retorno.",
+                "Promover uma redistribuição progressiva da carga de trabalho, permitindo que o profissional retome o ritmo corporativo sem sobrecarga imediata.",
+                "Agendar um repasse de atualizações sobre projetos e comunicações internas ocorridas durante o período de ausência, priorizando o esvaziamento gradual da caixa de entrada.",
+                "Avaliar, em conjunto com o colaborador, a necessidade de ajustes temporários no escopo de entregas para garantir uma transição sustentável."
+            ],
+            "orientacao_ergonomica_padrao": "Certifique-se de ajustar a altura do monitor e da cadeira para manter uma postura neutra, realize pausas ativas para alongamento e mantenha a hidratação regular durante a jornada de trabalho."
+        }
+    },
+    {
+        "nome_paciente": "Ana Maria",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "77889/PR",
+        "data_atendimento": "2026-03-27",
+        "cid": "Z73",
+        "dias_afastamento": 15,
+        "arquivo_origem": "atestado_ana_4.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 98,
+            "alertas": [],
+            "parecer_tecnico": "O documento apresenta conformidade técnica total. O CRM segue o padrão brasileiro (Números/UF), a data de atendimento é anterior à data atual e o CID Z73 (Problemas relacionados com a gestão da vida, que engloba burnout e estresse) é biologicamente compatível com o paciente e aceitável para o período de 15 dias de afastamento."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_especialidade_cid": "Certa",
+            "alerta_rqe": null,
+            "conclusao_tecnica": "O CRM 77889/PR segue o padrão normativo do CFM. O médico Julio Cesar Batista não possui especialidade explicitada no registro, sendo classificado como Generalista. O CID Z73 (Problemas relacionados com a gestão da vida - Burnout/Estresse) é passível de diagnóstico e condução por médicos generalistas, clínicos ou do trabalho, não havendo obrigatoriedade estrita de RQE em Psiquiatria para este código específico, tornando a atuação coerente."
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": true,
+            "campos_ocultados": [
+                "cid",
+                "parecer_tecnico",
+                "conclusao_tecnica",
+                "coerencia_especialidade_cid"
+            ],
+            "dados_seguros_para_rh": {
+                "paciente": "Ana Maria",
+                "medico": "Julio Cesar Batista",
+                "crm": "77889/PR",
+                "data_atendimento": "2026-03-27",
+                "dias_afastamento": 15,
+                "cid_processado": "[DADO OCULTO - PROTEÇÃO LGPD]",
+                "observacao_privacidade": "Ativo"
+            },
+            "parecer_dpo": "Dados anonimizados com sucesso. Foram removidas todas as menções ao CID Z73 e as descrições diagnósticas (Burnout/Estresse) contidas nos campos técnicos originais. A retenção de informações foi limitada ao mínimo necessário para o cumprimento de obrigações trabalhistas e folha de pagamento, em estrita observância ao princípio da minimização de dados da LGPD (Art. 6º, III)."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "15",
+            "diretrizes_gestor_rh": [
+                "Realizar uma mini-entrevista de boas-vindas entre o gestor imediato e o colaborador para um acolhimento humanizado e realinhamento de expectativas.",
+                "Promover a redistribuição progressiva da carga de trabalho ao longo da primeira semana, evitando a entrega imediata de demandas de alta complexidade ou urgência crítica.",
+                "Agendar uma reunião de atualização (briefing) sobre os principais acontecimentos, decisões e mudanças de processos que ocorreram no departamento durante o período de ausência.",
+                "Garantir flexibilidade de ritmo no primeiro dia de retorno para que o colaborador possa organizar sua caixa de entrada e ferramentas de trabalho sem pressão excessiva."
+            ],
+            "orientacao_ergonomica_padrao": "Recomendamos o ajuste cuidadoso da altura do monitor e da cadeira, a manutenção de uma postura neutra e a realização de pausas ativas regulares e hidratação para garantir um retorno confortável e preventivo."
+        }
+    },
+    {
+        "nome_paciente": "Lucas Lima",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "33445/RJ",
+        "data_atendimento": "2026-03-27",
+        "cid": "H10",
+        "dias_afastamento": 3,
+        "arquivo_origem": "atestado_lucas_7.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "O documento apresenta total conformidade técnica. O CRM segue o padrão regulamentar (Números/UF), a cronologia do atendimento é válida em relação à data atual e o período de afastamento de 3 dias é estritamente compatível com o CID H10 (Conjuntivite)."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_especialidade_cid": "Certa",
+            "alerta_rqe": "Nenhum alerta. O CID H10 (Conjuntivite) é uma patologia de atenção primária e urgência, compatível com a atuação de clínico geral.",
+            "conclusao_tecnica": "O CRM 33445/RJ apresenta formato regular. Não há especialidade declarada no nome, o que indica atuação como Generalista. O CID H10 refere-se a conjuntivite, quadro clínico de baixa complexidade cuja conduta e emissão de atestado de curto prazo (3 dias) são plenamente compatíveis com a competência do médico sem necessidade de RQE específico em oftalmologia."
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": true,
+            "campos_ocultados": [
+                "cid",
+                "auditoria.parecer_tecnico",
+                "validacao_profissional.alerta_rqe",
+                "validacao_profissional.conclusao_tecnica"
+            ],
+            "dados_seguros_para_rh": {
+                "paciente": "Lucas Lima",
+                "medico": "Julio Cesar Batista (CRM 33445/RJ)",
+                "data_atendimento": "2026-03-27",
+                "dias_afastamento": 3,
+                "cid_processado": "[DADO OCULTO - PROTEÇÃO LGPD]",
+                "observacao_privacidade": "Ativo"
+            },
+            "parecer_dpo": "Processo de higienização de dados concluído com sucesso. Foram removidas todas as menções diretas e indiretas ao diagnóstico (CID H10 e patologia correlata) presentes nos campos técnicos e de auditoria, em estrita conformidade com o Artigo 5º, inciso II da LGPD. As informações administrativas necessárias para o abono de faltas e processamento de folha de pagamento foram preservadas e estão seguras para visualização pelo RH."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "3",
+            "diretrizes_gestor_rh": [
+                "Realizar uma reunião de alinhamento breve (aproximadamente 10 minutos) entre líder e colaborador para repasse das prioridades atuais.",
+                "Auxiliar na triagem de e-mails e mensagens acumuladas para reduzir a sobrecarga cognitiva e a ansiedade no início da jornada.",
+                "Evitar a atribuição de tarefas que exijam esforço físico ou mental extremo no primeiro dia, permitindo uma readaptação gradual ao ritmo da equipe."
+            ],
+            "orientacao_ergonomica_padrao": "Certifique-se de que o monitor esteja na altura dos olhos, mantenha os pés apoiados e faça pausas curtas a cada hora para alongamento e hidratação."
+        }
+    },
+    {
+        "nome_paciente": "Paulo Mendes",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "77889/PR",
+        "data_atendimento": "2026-03-27",
+        "cid": "U07.1",
+        "dias_afastamento": 5,
+        "arquivo_origem": "atestado_paulo_8.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "O documento apresenta total conformidade técnica. O CRM segue o padrão brasileiro (Números/UF), a data de atendimento é anterior à data atual e o período de afastamento (5 dias) é perfeitamente compatível com o protocolo clínico para o CID U07.1 (COVID-19)."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": false,
+            "conclusao_tecnica": "Falha na validação"
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": false,
+            "parecer_dpo": "Falha ao aplicar filtro de privacidade."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": false,
+            "orientacao_ergonomica_padrao": "Bem-vindo de volta! Faça pausas e ajuste sua cadeira."
+        }
+    },
+    {
+        "nome_paciente": "Joao Paulo",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "11223/SP",
+        "data_atendimento": "2026-03-27",
+        "cid": "J11",
+        "dias_afastamento": 3,
+        "arquivo_origem": "atestado_joao_5.png",
+        "auditoria": {
+            "status": "Erro",
+            "alertas": [
+                "Falha no processamento da auditoria"
+            ]
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": false,
+            "conclusao_tecnica": "Falha na validação"
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": false,
+            "parecer_dpo": "Falha ao aplicar filtro de privacidade."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "Não especificado",
+            "diretrizes_gestor_rh": [
+                "Promover uma recepção acolhedora e empática para restabelecer o senso de pertencimento e segurança do colaborador.",
+                "Realizar uma reunião de alinhamento de curto prazo para priorizar tarefas essenciais e evitar o acúmulo de demandas não resolvidas.",
+                "Garantir uma curva de reentrada equilibrada, permitindo que o primeiro dia seja focado na organização do fluxo de trabalho e atualização de comunicações internas."
+            ],
+            "orientacao_ergonomica_padrao": "Certifique-se de ajustar a altura do monitor e da cadeira para manter uma postura neutra, realizando pausas ativas a cada hora para alongamento e hidratação constante."
+        }
     }
 ]
