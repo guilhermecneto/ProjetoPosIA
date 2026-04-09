@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Atestados Médicos — IA Corporativa</title>
-    <meta name="description" content="Painel inteligente de auditoria de atestados médicos com conformidade LGPD e análise de saúde ocupacional.">
+    <meta name="description"
+        content="Painel inteligente de auditoria de atestados médicos com conformidade LGPD e análise de saúde ocupacional.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="dashboard-container">
 
         <!-- HEADER -->
         <header>
             <div class="header-titles">
-                <div class="header-badge">🤖 Pipeline de IA Ativa</div>
+                <div class="header-badge">🤖 Auditoria Inteligente• Ativa</div>
                 <h1>Painel de Atestados</h1>
-                <p>Processamento automatizado por 6 Skills de Inteligência Artificial</p>
+                <p>Processamento automático e auditoria com Inteligência Artificial</p>
             </div>
             <div class="header-actions">
                 <button id="refresh-btn" class="btn primary-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-ccw"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-refresh-ccw">
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <polyline points="23 20 23 14 17 14"></polyline>
+                        <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+                    </svg>
                     Sincronizar
                 </button>
             </div>
@@ -58,13 +68,9 @@
                     <p id="irregular-count" class="counter">0</p>
                 </div>
             </div>
-            <div class="stat-card glass-panel">
-                <div class="stat-icon blue-gradient">🔒</div>
-                <div class="stat-content">
-                    <h3>LGPD Conformes</h3>
-                    <p id="lgpd-count" class="counter">0</p>
-                </div>
-            </div>
+            <!-- lgpd-count kept hidden for internal use only -->
+            <p id="lgpd-count" style="display:none;">0</p>
+
         </div>
 
         <!-- TABELA PRINCIPAL -->
@@ -72,10 +78,15 @@
             <div class="section-header">
                 <div>
                     <h2>Registros Auditados</h2>
-                    <p class="section-subtitle">Clique em um registro para ver o detalhamento completo de todas as Skills</p>
+                    <p class="section-subtitle">Clique em um registro para ver o detalhamento completo</p>
                 </div>
                 <div class="search-container">
-                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                     <input type="text" id="search-input" placeholder="Buscar paciente, médico, CRM...">
                 </div>
             </div>
@@ -87,14 +98,13 @@
                             <th>Paciente</th>
                             <th>Médico</th>
                             <th>CRM</th>
-                            <th title="Skill: ValidacaoEspecialidadeCRM">CRM Válido</th>
-                            <th title="Skill: ValidacaoEspecialidadeCRM">Especialidade</th>
+                            <th>CRM Válido</th>
+                            <th>Especialidade</th>
                             <th>Data</th>
-                            <th title="Skill: SalvarDadosAtestados">Afastamento</th>
-                            <th title="Skill: AuditorAtestado">Auditoria</th>
-                            <th title="Skill: AuditorAtestado">Confiança</th>
-                            <th title="Skill: FiltroPrivacidadeLGPD">LGPD</th>
-                            <th title="Skill: PlanejadorRetornoTrabalho">Retorno</th>
+                            <th>Afastamento</th>
+                            <th>Auditoria</th>
+                            <th>Confiança</th>
+                            <th>Retorno</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -117,7 +127,7 @@
                     <span class="macro-icon">🏥</span>
                     <div>
                         <h2>Relatório de Saúde Ocupacional</h2>
-                        <p class="section-subtitle">Análise macro gerada pela Skill: <strong>AnalistaSaudeOcupacional</strong></p>
+                        <p class="section-subtitle">Análise consolidada do período</p>
                     </div>
                 </div>
                 <div id="macro-nexo-badge" class="nexo-badge"></div>
@@ -154,76 +164,88 @@
 
             <div class="modal-skills-grid">
 
-                <!-- Skill 1: Extração -->
+                <!-- Dados do Atestado -->
                 <div class="skill-card skill-extracao">
                     <div class="skill-card-header">
-                        <span class="skill-num">Skill 1</span>
-                        <h4>📄 Extração de Dados</h4>
+                        <h4>📄 Dados do Atestado</h4>
                     </div>
                     <div class="skill-card-body">
-                        <div class="info-row"><span class="info-label">Paciente</span><span id="d-nome" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">Médico</span><span id="d-medico" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">CRM</span><span id="d-crm" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">Data Atendimento</span><span id="d-data" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">Afastamento</span><span id="d-dias" class="info-val info-highlight"></span></div>
+                        <div class="info-row"><span class="info-label">Paciente</span><span id="d-nome"
+                                class="info-val"></span></div>
+                        <div class="info-row"><span class="info-label">Médico</span><span id="d-medico"
+                                class="info-val"></span></div>
+                        <div class="info-row"><span class="info-label">CRM</span><span id="d-crm"
+                                class="info-val"></span></div>
+                        <div class="info-row"><span class="info-label">Data Atendimento</span><span id="d-data"
+                                class="info-val"></span></div>
+                        <div class="info-row"><span class="info-label">Afastamento</span><span id="d-dias"
+                                class="info-val info-highlight"></span></div>
                     </div>
                 </div>
 
-                <!-- Skill 2: Auditoria -->
+                <!-- Auditoria -->
                 <div class="skill-card skill-auditoria">
                     <div class="skill-card-header">
-                        <span class="skill-num">Skill 2</span>
                         <h4>🔍 Auditoria Clínica</h4>
                     </div>
                     <div class="skill-card-body">
-                        <div class="info-row"><span class="info-label">Status</span><span id="d-audit-status" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">Score de Confiança</span><span id="d-audit-score" class="info-val"></span></div>
-                        <div class="info-row info-col"><span class="info-label">Alertas</span><ul id="d-audit-alertas" class="alert-list"></ul></div>
-                        <div class="info-row info-col"><span class="info-label">Parecer Técnico</span><p id="d-audit-parecer" class="info-parecer"></p></div>
+                        <div class="info-row"><span class="info-label">Status</span><span id="d-audit-status"
+                                class="info-val"></span></div>
+                        <div class="info-row"><span class="info-label">Score de Confiança</span><span id="d-audit-score"
+                                class="info-val"></span></div>
+                        <div class="info-row info-col"><span class="info-label">Alertas</span>
+                            <ul id="d-audit-alertas" class="alert-list"></ul>
+                        </div>
+                        <div class="info-row info-col"><span class="info-label">Parecer Técnico</span>
+                            <p id="d-audit-parecer" class="info-parecer"></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Skill 3: Validação CRM -->
+                <!-- Validação CRM -->
                 <div class="skill-card skill-validacao">
                     <div class="skill-card-header">
-                        <span class="skill-num">Skill 3</span>
-                        <h4>🏛️ Validação CRM</h4>
+                        <h4>🏙️ Validação CRM</h4>
                     </div>
                     <div class="skill-card-body">
-                        <div class="info-row"><span class="info-label">Formato CRM</span><span id="d-crm-valido" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">Especialidade</span><span id="d-especialidade" class="info-val"></span></div>
-                        <div class="info-row"><span class="info-label">Coerência de Habilitação</span><span id="d-coerencia" class="info-val"></span></div>
-                        <div class="info-row info-col"><span class="info-label">Alerta RQE</span><p id="d-alerta-rqe" class="info-parecer"></p></div>
-                        <div class="info-row info-col"><span class="info-label">Conclusão</span><p id="d-val-conclusao" class="info-parecer"></p></div>
+                        <div class="info-row"><span class="info-label">Formato CRM</span><span id="d-crm-valido"
+                                class="info-val"></span></div>
+                        <div class="info-row"><span class="info-label">Especialidade</span><span id="d-especialidade"
+                                class="info-val"></span></div>
+                        <!-- internal hidden -->
+                        <span id="d-coerencia" style="display:none;"></span>
+                        <div class="info-row info-col"><span class="info-label">Alerta RQE</span>
+                            <p id="d-alerta-rqe" class="info-parecer"></p>
+                        </div>
+                        <div class="info-row info-col"><span class="info-label">Conclusão</span>
+                            <p id="d-val-conclusao" class="info-parecer"></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Skill 4: LGPD -->
-                <div class="skill-card skill-lgpd">
-                    <div class="skill-card-header">
-                        <span class="skill-num">Skill 4</span>
-                        <h4>🔒 Privacidade LGPD</h4>
-                    </div>
-                    <div class="skill-card-body">
-                        <div class="info-row"><span class="info-label">Anonimização</span><span id="d-lgpd-ok" class="info-val"></span></div>
-                        <div class="info-row info-col"><span class="info-label">Campos Ocultados</span><div id="d-lgpd-campos" class="tags-container"></div></div>
-                        <div class="info-row"><span class="info-label">Afastamento (RH)</span><span id="d-lgpd-dias" class="info-val info-highlight"></span></div>
-                        <div class="info-row info-col"><span class="info-label">Parecer DPO</span><p id="d-lgpd-parecer" class="info-parecer"></p></div>
-                    </div>
-                </div>
 
-                <!-- Skill 5: Retorno -->
+                <!-- Plano de Retorno -->
                 <div class="skill-card skill-retorno">
                     <div class="skill-card-header">
-                        <span class="skill-num">Skill 5</span>
                         <h4>🔄 Plano de Retorno</h4>
                     </div>
                     <div class="skill-card-body">
-                        <div class="info-row"><span class="info-label">Dias Avaliados</span><span id="d-retorno-dias" class="info-val"></span></div>
-                        <div class="info-row info-col"><span class="info-label">Diretrizes para o Gestor/RH</span><ul id="d-retorno-diretrizes" class="alert-list alert-list-green"></ul></div>
-                        <div class="info-row info-col"><span class="info-label">Orientação Ergonômica</span><p id="d-retorno-ergonomia" class="info-parecer info-parecer-blue"></p></div>
+                        <div class="info-row"><span class="info-label">Dias Avaliados</span><span id="d-retorno-dias"
+                                class="info-val"></span></div>
+                        <div class="info-row info-col"><span class="info-label">Diretrizes para o Gestor/RH</span>
+                            <ul id="d-retorno-diretrizes" class="alert-list alert-list-green"></ul>
+                        </div>
+                        <div class="info-row info-col"><span class="info-label">Orientação Ergonômica</span>
+                            <p id="d-retorno-ergonomia" class="info-parecer info-parecer-blue"></p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Skill LGPD: hidden internal elements -->
+                <span id="d-lgpd-ok" style="display:none;"></span>
+                <span id="d-lgpd-campos" style="display:none;"></span>
+                <span id="d-lgpd-dias" style="display:none;"></span>
+                <span id="d-lgpd-parecer" style="display:none;"></span>
 
             </div><!-- /modal-skills-grid -->
         </div>
@@ -231,4 +253,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>

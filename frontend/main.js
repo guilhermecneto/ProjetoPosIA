@@ -46,6 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return p.length === 3 ? `${p[2]}/${p[1]}/${p[0]}` : ds;
     }
 
+    /**
+     * Remove referências a CID e nomes de doenças de textos gerados pela IA.
+     * A skill LGPD processa isso no backend, mas aplicamos uma segunda camada
+     * de sanitização no frontend para garantia total de privacidade.
+     */
+    function sanitizeText(text) {
+        if (!text) return text;
+        // Remove padrões como: CID A09, CID-10 J01, o CID Z73 (Burnout...), etc.
+        // Inclui o nome da doença entre parênteses logo após o código
+        let s = text
+            .replace(/\bCID[-\s]?(?:10)?[-\s]?[A-Z]\d{2}(?:\.\d{1,2})?(?:\s*\([^)]+\))?/gi, '[dado clínico omitido]')
+            // Remove referências isoladas como "(Diarreia e gastroenterite...)", "(Sinusite aguda)"
+            // apenas quando precedidas por "diagnóstico", "patologia", "quadro", "doença"
+            .replace(/(?:diagnóstico|patologia|quadro clínico|doença)\s+(?:de\s+)?[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ][a-záàâãéêíóôõúç][^,;.]{2,60}(?=[,;.])/gi, 'diagnóstico [dado clínico omitido]');
+        return s;
+    }
+
     function scoreColor(n) {
         if (n >= 80) return '#34D399';
         if (n >= 50) return '#FCD34D';
@@ -109,14 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td class="patient-name">${item.nome_paciente || 'N/A'}</td>
                     <td style="color:var(--text-light)">${item.nome_medico || 'N/A'}</td>
                     <td><span class="file-tag">${item.crm || 'N/A'}</span></td>
-                    <td class="text-center">${crmValido === true ? '<span class="crm-valid" title="Formato válido">✅</span>' : crmValido === false ? '<span class="crm-invalid" title="Formato inválido">❌</span>' : '—'}</td>
+                    <td class="text-center">${crmValido === true ? '<span class="crm-valid" title="Formato v\u00e1lido">\u2705</span>' : crmValido === false ? '<span class="crm-invalid" title="Formato inv\u00e1lido">\u274c</span>' : '\u2014'}</td>
                     <td><span class="badge badge-especialidade">${especialidade}</span></td>
                     <td style="color:var(--text-light)">${formatDate(item.data_atendimento)}</td>
                     <td class="text-center font-weight-bold" style="color:#818CF8">${item.dias_afastamento != null ? item.dias_afastamento + ' dia(s)' : 'N/A'}</td>
                     <td><span class="badge badge-status status-${statusClass}">${item.auditoria?.status || 'Pendente'}</span></td>
                     <td>${scoreHtml}</td>
-                    <td class="text-center"><span class="badge ${lgpdOk ? 'badge-lgpd-ok' : 'badge-lgpd-err'}">${lgpdOk ? '🔒 Sim' : '⚠️ Não'}</span></td>
-                    <td class="text-center"><span class="badge badge-retorno">${retornoPronto ? '✅ ' + diasRetorno + ' d' : '—'}</span></td>
+                    <td class="text-center"><span class="badge badge-retorno">${retornoPronto ? '\u2705 ' + diasRetorno + ' d' : '\u2014'}</span></td>
                     <td><button class="btn-detail" data-index="${index}">Ver detalhes</button></td>
                 `;
 
@@ -149,17 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const alertasEl = document.getElementById('d-audit-alertas');
         alertasEl.innerHTML = '';
         (audit.alertas || ['Nenhum alerta registrado.']).forEach(a => {
-            const li = document.createElement('li'); li.textContent = a; alertasEl.appendChild(li);
+            const li = document.createElement('li'); li.textContent = sanitizeText(a); alertasEl.appendChild(li);
         });
-        document.getElementById('d-audit-parecer').textContent = audit.parecer_tecnico || '—';
+        document.getElementById('d-audit-parecer').textContent = sanitizeText(audit.parecer_tecnico) || '—';
 
-        // Skill 3: Validação CRM
+        // Validação CRM
         const val = item.validacao_profissional || {};
         document.getElementById('d-crm-valido').innerHTML     = val.crm_formato_valido === true ? '<span class="badge badge-lgpd-ok">✅ Válido</span>' : val.crm_formato_valido === false ? '<span class="badge badge-lgpd-err">❌ Inválido</span>' : '—';
         document.getElementById('d-especialidade').innerHTML  = `<span class="badge badge-especialidade">${val.especialidade_detectada || '—'}</span>`;
-        document.getElementById('d-coerencia').textContent    = val.coerencia_habilitacao || val.coerencia_especialidade_cid || '—';
-        document.getElementById('d-alerta-rqe').textContent   = val.alerta_rqe || 'Nenhum alerta.';
-        document.getElementById('d-val-conclusao').textContent = val.conclusao_tecnica || '—';
+        document.getElementById('d-coerencia').textContent    = sanitizeText(val.coerencia_habilitacao || val.coerencia_especialidade_cid) || '—';
+        document.getElementById('d-alerta-rqe').textContent   = sanitizeText(val.alerta_rqe) || 'Nenhum alerta.';
+        document.getElementById('d-val-conclusao').textContent = sanitizeText(val.conclusao_tecnica) || '—';
 
         // Skill 4: LGPD
         const lgpd = item.privacidade_lgpd || {};
