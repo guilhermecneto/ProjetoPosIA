@@ -12,9 +12,4 @@ env/
 # MacOS
 .DS_Store
 
-# Documentos
-documentos_medicos/*.png
-documentos_medicos/*.pdf
-documentos_medicos/*.jpg
-documentos_medicos/*.jpeg
-documentos_medicos/*.webp
+

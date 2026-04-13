@@ -1,1 +1,153 @@
-[]
+[
+    {
+        "nome_paciente": "Guilherme",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "11223/SP",
+        "data_atendimento": "2026-03-27",
+        "cid": "M54",
+        "dias_afastamento": 5,
+        "arquivo_origem": "atestado_guilherme.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "A documentação apresenta plena conformidade com os critérios de auditoria. O CRM segue o padrão normativo (Número/UF), a data do atendimento é cronologicamente válida e o período de 5 dias de afastamento é tecnicamente compatível com o CID M54 (Dorsalgia)."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_habilitacao": "Certa",
+            "alerta_rqe": "O profissional possui registro ativo em formato regular. Por não haver especialidade explicitada, a atuação é classificada como medicina geral, sendo compatível com o atendimento realizado.",
+            "conclusao_tecnica": "Validação concluída com sucesso. O CRM segue o padrão normativo e a habilitação profissional é coerente com a natureza da assistência prestada, sem indícios de exercício de especialidade sem o devido registro."
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": true,
+            "campos_ocultados": [
+                "cid",
+                "parecer_tecnico",
+                "alerta_rqe",
+                "conclusao_tecnica"
+            ],
+            "dados_seguros_para_rh": {
+                "paciente": "Guilherme",
+                "medico": "Julio Cesar Batista",
+                "crm": "11223/SP",
+                "data_atendimento": "2026-03-27",
+                "dias_afastamento": 5,
+                "cid_processado": "[DADO OCULTO - PROTEÇÃO LGPD]",
+                "observacao_privacidade": "Ativo"
+            },
+            "parecer_dpo": "Processamento concluído com sucesso. O diagnóstico (CID M54) e as descrições técnicas que mencionavam a patologia (Dorsalgia) foram integralmente removidos para garantir a conformidade com a LGPD e o sigilo médico-paciente. Os dados restantes são estritamente administrativos e suficientes para o processamento da folha de pagamento e abono de faltas."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "5",
+            "diretrizes_gestor_rh": [
+                "Promover um acolhimento cordial no início da jornada para reintegrar o colaborador à cultura e ao ambiente da equipe.",
+                "Realizar uma reunião de alinhamento de até 15 minutos para repassar as prioridades da semana e auxiliar na organização do fluxo de e-mails e demandas acumuladas.",
+                "Priorizar a entrega de tarefas de baixa e média complexidade no primeiro dia, evitando esforços físicos ou mentais extremos para garantir uma readaptação gradual."
+            ],
+            "orientacao_ergonomica_padrao": "Certifique-se de que o monitor esteja na altura dos olhos e os pés bem apoiados, realizando pausas breves para alongamento e hidratação constante ao longo do dia."
+        }
+    },
+    {
+        "nome_paciente": "Pedro de Alcântara",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "55443/SP",
+        "data_atendimento": "2026-03-27",
+        "cid": "A09",
+        "dias_afastamento": 4,
+        "arquivo_origem": "atestado_pedro.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "O documento apresenta conformidade técnica total. O CRM está devidamente formatado com número e UF, a data de atendimento é cronologicamente anterior à data atual e o período de 4 dias de afastamento é clinicamente compatível com o CID A09 (Diarreia e gastroenterite de origem infecciosa presumível)."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_habilitacao": "Certa",
+            "alerta_rqe": "O profissional apresenta registro regular. Para atendimentos de rotina e emissão de documentos médicos básicos, a habilitação como médico generalista é plenamente compatível.",
+            "conclusao_tecnica": "Validação de habilitação profissional concluída com sucesso. O CRM segue o padrão regulamentar e a atuação está em conformidade com as normas vigentes, não havendo indícios de exercício de especialidade sem o devido registro."
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": true,
+            "campos_ocultados": [
+                "cid",
+                "parecer_tecnico",
+                "auditoria.parecer_tecnico"
+            ],
+            "dados_seguros_para_rh": {
+                "paciente": "Pedro de Alcântara",
+                "medico": "Julio Cesar Batista",
+                "crm": "55443/SP",
+                "data_atendimento": "2026-03-27",
+                "dias_afastamento": 4,
+                "cid_processado": "[DADO OCULTO - PROTEÇÃO LGPD]",
+                "observacao_privacidade": "Ativo"
+            },
+            "parecer_dpo": "Processamento realizado com sucesso. As informações de diagnóstico (CID A09) e a descrição clínica contida no parecer técnico foram integralmente mascaradas para garantir a conformidade com a LGPD e o sigilo médico. Os dados mantidos são estritamente os necessários para a finalidade de abono de faltas e gestão de folha de pagamento."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "4",
+            "diretrizes_gestor_rh": [
+                "Promover uma reunião de alinhamento de aproximadamente 10 minutos com a liderança direta para repasse de prioridades e atualização sobre o status dos projetos.",
+                "Priorizar a organização da caixa de entrada e ferramentas de comunicação interna, permitindo que o colaborador neutralize pendências antes de assumir novas demandas.",
+                "Evitar a atribuição de tarefas que exijam esforço físico ou mental extremo no primeiro dia de retorno, visando uma readaptação gradual ao ritmo operacional."
+            ],
+            "orientacao_ergonomica_padrao": "Recomendamos atenção especial à postura no posto de trabalho, garantindo o ajuste correto do monitor e da cadeira, além de incentivar pausas ativas e hidratação regular para manter o bem-estar e a produtividade."
+        }
+    },
+    {
+        "nome_paciente": "Renata Vasconcelos",
+        "nome_medico": "Julio Cesar Batista",
+        "crm": "12399/RJ",
+        "data_atendimento": "2026-03-27",
+        "cid": "J01",
+        "dias_afastamento": 2,
+        "arquivo_origem": "atestado_renata.png",
+        "auditoria": {
+            "status": "Aprovado",
+            "score_confianca": 100,
+            "alertas": [],
+            "parecer_tecnico": "O atestado apresenta plena conformidade técnica. O CRM segue o padrão exigido (Números/UF), a data de atendimento é anterior à data atual e o período de afastamento (2 dias) é perfeitamente compatível com o diagnóstico de Sinusite Aguda (CID J01)."
+        },
+        "validacao_profissional": {
+            "crm_formato_valido": true,
+            "especialidade_detectada": "Generalista",
+            "coerencia_habilitacao": "Certa",
+            "alerta_rqe": "Sem alertas. O profissional possui registro regular e a emissão de documentos de afastamento de curta duração é compatível com a atuação de um médico generalista.",
+            "conclusao_tecnica": "Validação concluída com sucesso. O CRM segue o padrão normativo Numbers/UF e a atuação profissional demonstra conformidade com as prerrogativas do registro de médico generalista para o nível de assistência prestado."
+        },
+        "privacidade_lgpd": {
+            "sucesso_anonimizacao": true,
+            "campos_ocultados": [
+                "cid",
+                "parecer_tecnico",
+                "alerta_rqe",
+                "conclusao_tecnica"
+            ],
+            "dados_seguros_para_rh": {
+                "paciente": "Renata Vasconcelos",
+                "medico": "Julio Cesar Batista (CRM 12399/RJ)",
+                "data_atendimento": "2026-03-27",
+                "dias_afastamento": 2,
+                "cid_processado": "[DADO OCULTO - PROTEÇÃO LGPD]",
+                "observacao_privacidade": "Ativo"
+            },
+            "parecer_dpo": "Processo de anonimização concluído. Foram removidas todas as referências ao diagnóstico (CID J01) e descrições clínicas presentes nos metadados de auditoria ('parecer_tecnico'), garantindo a conformidade com a LGPD e o sigilo médico. Os dados remanescentes são estritamente administrativos e suficientes para o processamento do abono de faltas pelo RH."
+        },
+        "plano_de_retorno_rh": {
+            "plano_retorno_gerado": true,
+            "dias_avaliados": "2",
+            "diretrizes_gestor_rh": [
+                "Promover uma recepção acolhedora e empática para restabelecer o sentimento de pertencimento do colaborador.",
+                "Realizar um breve repasse de prioridades (cerca de 10 a 15 minutos) para alinhar as demandas urgentes e reduzir a ansiedade com o volume de mensagens acumuladas.",
+                "Sugerir que o colaborador evite tarefas de esforço mental ou físico extremo nas primeiras horas, priorizando a organização do fluxo de trabalho."
+            ],
+            "orientacao_ergonomica_padrao": "Certifique-se de ajustar a altura do monitor e da cadeira para manter uma postura neutra, e realize pausas ativas a cada hora para hidratação e relaxamento muscular."
+        }
+    }
+]

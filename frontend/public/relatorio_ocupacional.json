@@ -1,1 +1,17 @@
-{}
+{
+    "analise_macro_gerada": true,
+    "volume_total_analisado": "3 registros",
+    "alerta_nexo_causal_identificado": "Requer Investigação",
+    "principais_riscos_mapeados": [
+        "Risco Ergonômico: Identificada queixa relacionada a dores na região das costas, sugerindo inadequação postural ou mobiliário deficiente.",
+        "Risco Ambiental/Sanitário: Presença de transtorno gastrointestinal que pode indicar falhas na higiene de áreas comuns, refeitórios ou qualidade da água.",
+        "Risco de Climatização: Registro de inflamação em vias aéreas superiores, comumente associada à má manutenção de sistemas de ar-condicionado ou variações bruscas de temperatura no ambiente laboral."
+    ],
+    "plano_acao_preventiva": [
+        "Realizar Análise Ergonômica do Trabalho (AET) e implementar pausas ativas para reduzir a sobrecarga na coluna vertebral.",
+        "Auditar a limpeza dos reservatórios de água e os protocolos de higiene do serviço de alimentação/copa.",
+        "Revisar o Plano de Manutenção, Operação e Controle (PMOC) dos sistemas de climatização para garantir a qualidade do ar interior.",
+        "Promover campanhas de conscientização sobre etiqueta respiratória e higienização das mãos."
+    ],
+    "conclusao_medicina_trabalho": "A amostragem atual apresenta uma distribuição diversificada de patologias (osteomuscular, gastrointestinal e respiratória). Embora o volume seja baixo para caracterizar um surto, a presença de nexo técnico em três áreas distintas exige uma vigilância ativa sobre o ambiente físico e as condições sanitárias da empresa para evitar o aumento do absenteísmo."
+}
